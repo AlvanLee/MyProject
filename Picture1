@@ -1,0 +1,23 @@
+
+public class Picture1 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		for(int i = 1; i <= 5; i++){          //用于控制行
+			if(i == 1);                  	  //如果i=1，则不执行
+			else{							  //用于控制格式
+				for(int j = 1; j < i; j++){		//否则，输出i-1个空格
+					System.out.print(" ");
+				}
+			}
+			for(int j = 1; j <= 10; j++){		
+				System.out.print("*");				//输出10个“*”
+			}
+			System.out.println();					//换行
+		}
+	}
+
+}
