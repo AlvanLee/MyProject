@@ -1,0 +1,32 @@
+
+public class NFP {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		final int NUMBER_FOR_PRIMES = 40;			//声明素数的数量
+		final int NUMBER_FOR_EVERY_LINE = 10;		//声明每行输出多少个素数
+		int count = 0;								//素数计数器
+		int number = 2;								//用于判断素数的数字
+		while(count < NUMBER_FOR_PRIMES){			
+			boolean isPrime = true;					//是否是素数的状态变量
+			for(int i = 2; i <= number / 2; i++){		
+				if(number % i == 0){			
+					isPrime = false;
+					break;
+				}
+			}
+			if(isPrime){							//如果是素数
+				count++;							//计数器+1
+				System.out.print(number +"\t");		//输出素数，不换行
+				if(count % NUMBER_FOR_EVERY_LINE == 0){			//如果已输出10个素数
+					System.out.println();						//换行
+				}
+			}
+			number++;											//自增用于判断的数字
+		}
+	}
+
+}
