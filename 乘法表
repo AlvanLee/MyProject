@@ -1,0 +1,21 @@
+public class Cal {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		outer:for(int j = 1; j <= 9; j++){
+			for(int i = 1; i <= 9; i++){
+				if(i > j){
+					System.out.println();
+					continue outer;
+				}
+				String str = i+"*"+j+"="+i*j;
+				System.out.print(str+"\t");
+			}
+			System.out.println();
+		}
+	}
+
+}
