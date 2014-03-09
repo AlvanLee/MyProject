@@ -1,0 +1,19 @@
+
+public class Array {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		char a[][] = new char[3][4];								//定义二维数组
+		for(int i = 0; i < a.length; i++){							
+			for(int j = 0; j < a[i].length; j++){					//循环遍历数组中的每个元素
+				a[i][j] = '*';										//初始化数组内容
+				System.out.print((char)a[i][j]);					//将素组中的元素输出
+			}			
+			System.out.println();									//换行
+		}
+	}
+
+}
