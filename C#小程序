@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+/*          程序题目：
+       从一个记录了学生成绩的文本文档（如图，仅供参考），每个学生的信息是一行，用“|”分割姓名、年龄、成绩，写程序取出成绩最高学生的信息。
+      参考： 使用string[] lines = System.IO.File.ReadAllLines(@"C:\Users\Administrator\Desktop\1.txt", Encoding.Default);
+ */
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] lines = System.IO.File .ReadAllLines(@"C:\Users\Administrator\Desktop\1.txt", Encoding.Default);//利用IO流读取文本文档文件内的内容到 lines 字符串数组
+          
+            foreach (string item in lines)                      //遍历lines字符串数组
+            {
+                Console.WriteLine(item);                        //输出lines字符串数组
+            }
+            string[][] strs = new string[3][];                 //创建名为strs的二维数组用于保存被“|”分割后的lines数组
+           
+            for (int i = 0; i < 3; i++)
+            {
+                strs[i] = lines[i].Split( '|');                  //将分割后的lines数组赋值给strs数组
+            }
+           
+            int temp = 0;                                       //创建一个临时变量
+           
+            for (int i = 0; i < 2; i++)
+             {         
+                 temp = Convert.ToInt32(strs[i][2]) > Convert .ToInt32(strs[i + 1][2]) ? i : i + 1;          //求出成绩最高的人的下标保存于 temp
+
+             }
+             Console.WriteLine();                                                                           //换行
+             Console.WriteLine(lines[temp]);                                                                //输出成绩最高的人的信息
+             Console.ReadKey();                                                                             //暂停
+            }
+
+        }
+    }
+
